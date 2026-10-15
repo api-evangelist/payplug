@@ -1,0 +1,288 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/payplug/main/json-schema/payplug-post-v1-v1-id-response-schema.json",
+  "title": "PostV1V1IdResponse",
+  "x-generated": "2026-10-14",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/payplug-openapi-generated.yml#/components/schemas/PostV1V1IdResponse",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "integer"
+    },
+    "amount_refunded": {
+      "type": "integer"
+    },
+    "authorization": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "card": {
+      "type": "object",
+      "properties": {
+        "brand": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "exp_month": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "exp_year": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "last4": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "created_at": {
+      "type": "integer"
+    },
+    "refundable_after": {
+      "type": "integer"
+    },
+    "refundable_until": {
+      "type": "integer"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "billing": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "mobile_phone_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "email": {
+          "type": "string"
+        },
+        "landline_phone_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "country": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        }
+      }
+    },
+    "shipping": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "mobile_phone_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "landline_phone_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "country": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
+        "delivery_type": {
+          "type": "string"
+        }
+      }
+    },
+    "failure": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "hosted_payment": {
+      "type": "object",
+      "properties": {
+        "cancel_url": {
+          "type": "string"
+        },
+        "paid_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "payment_url": {
+          "type": "string"
+        },
+        "return_url": {
+          "type": "string"
+        },
+        "sent_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "id": {
+      "type": "string"
+    },
+    "is_3ds": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "is_live": {
+      "type": "boolean"
+    },
+    "is_paid": {
+      "type": "boolean"
+    },
+    "paid_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "is_refunded": {
+      "type": "boolean"
+    },
+    "installment_plan_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "customer_id": {
+          "type": "string"
+        }
+      }
+    },
+    "notification": {
+      "type": "object",
+      "properties": {
+        "response_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "object": {
+      "type": "string"
+    },
+    "save_card": {
+      "type": "boolean"
+    }
+  }
+}

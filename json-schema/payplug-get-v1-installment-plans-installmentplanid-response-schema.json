@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/payplug/main/json-schema/payplug-get-v1-installment-plans-installmentplanid-response-schema.json",
+  "title": "GetV1InstallmentPlansInstallmentplanidResponse",
+  "x-generated": "2026-10-14",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/payplug-openapi-generated.yml#/components/schemas/GetV1InstallmentPlansInstallmentplanidResponse",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Installment plan ID."
+    },
+    "object": {
+      "type": "string",
+      "description": "Value is: installment_plan."
+    },
+    "status": {
+      "type": "string",
+      "description": "Current status."
+    }
+  }
+}

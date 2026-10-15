@@ -1,23 +1,125 @@
 aid: payplug
+
 name: PayPlug
-description: 'PayPlug is a company surfaced via the API Evangelist harvest backlog (source: tag-qc) and
-  added to the network as a stub for full-pipeline profiling.'
+
+image: https://www.payplug.com/wp-content/uploads/2023/02/visuel-payplug-1024x536-1.jpg
+
+description: 'PayPlug is a company surfaced via the API Evangelist harvest backlog (source: tag-qc) and added to the network as a stub for full-pipeline
+  profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/payplug/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:tag-qc
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-14 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-14'
+
 modified: '2026-10-14'
+
 tags:
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/payplug-rules.yml
+- type: JSONLD
+  url: json-ld/payplug-context.jsonld
+- type: Vocabulary
+  url: vocabulary/payplug-vocabulary.yml
+- type: DataModel
+  url: data-model/payplug-data-model.yml
+- type: ChangeLog
+  url: changelog/payplug-changelog.yml
+- type: Lifecycle
+  url: lifecycle/payplug-lifecycle.yml
+- type: Conformance
+  url: conformance/payplug-conformance.yml
+- type: SecurityTxt
+  url: well-known/payplug-status-security.txt
+- type: WellKnown
+  url: well-known/payplug-well-known.yml
+- type: Hosts
+  url: hosts/payplug-hosts.yml
+- type: Vendors
+  url: vendors/payplug-vendors.yml
+- type: SDKs
+  url: packages/payplug-packages.yml
+- type: Packages
+  url: packages/payplug-packages.yml
+- type: TermsOfService
+  url: https://www.payplug.com/terms-of-use/
+- type: Support
+  url: https://help.payplug.com/hc/fr
+- type: StatusPage
+  url: https://status.payplug.com/
+- type: PrivacyPolicy
+  url: https://www.payplug.com/privacy-policy/
+- type: Pricing
+  url: https://www.payplug.com/pricing/
+- type: Newsroom
+  url: https://www.payplug.com/press/
+- type: DeveloperPortal
+  url: https://portal.payplug.com/
+- type: Blog
+  url: https://www.payplug.com/blog/
+- type: GettingStarted
+  url: https://docs.payplug.com/api/index.html
+- type: Documentation
+  url: https://docs.payplug.com/
+- type: GitHubOrganization
+  url: https://github.com/payplug
+- type: DomainSecurity
+  url: security/payplug-domain-security.yml
 - type: Website
   url: https://www.payplug.com
+
+apis:
+- aid: payplug:payplug-api
+  name: PayPlug API
+  description: 'PayPlug API as documented publicly: 11 operations. Contract generated from the documentation by API Evangelist (2026-10-14); not
+    the provider''s own document.'
+  humanURL: https://docs.payplug.com/api/apiref.html
+  baseURL: https://api.payplug.com
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/payplug-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/payplug-post-v1-v1-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-post-v1-v1-id-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-get-v1-payments-paymentid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-get-v1-installment-plans-installmentplanid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-get-v1-payments-paymentid-refunds-refundid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-post-v1-payments-paymentid-refunds-response-schema.json
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: Documentation at https://docs.payplug.com/api/ provides no machine‑readable OpenAPI, GraphQL, AsyncAPI or WSDL specifications.
+  evidence:
+  - url: https://docs.payplug.com/api/
+    status: 200
+  checked: '2026-10-14'
+x-enrichment:
+  date: '2026-10-14'
+  status: enriched
+  artifacts_added: 21
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

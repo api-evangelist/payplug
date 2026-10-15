@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/payplug/main/json-schema/payplug-get-v1-payments-paymentid-refunds-refundid-response-schema.json",
+  "title": "GetV1PaymentsPaymentidRefundsRefundidResponse",
+  "x-generated": "2026-10-14",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/payplug-openapi-generated.yml#/components/schemas/GetV1PaymentsPaymentidRefundsRefundidResponse",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Refund ID."
+    },
+    "object": {
+      "type": "string",
+      "description": "Value is: refund."
+    },
+    "amount": {
+      "type": "string",
+      "description": "Refund amount."
+    }
+  }
+}

@@ -1,0 +1,41 @@
+generated: '2026-10-14'
+method: probed
+generator: harvest-packages.py
+source: registry metadata endpoints (registry.npmjs.org, pypi.org, rubygems.org, api.nuget.org, packagist.org, crates.io) ; github.com/payplug
+ownership_rule: 'official: true only when the registry metadata (homepage, repository, author, URLs) names the provider''s domain (payplug.com,
+  security/payplug-domain-security.yml) or its accepted GitHub org (payplug).'
+packages:
+- name: payplug
+  registry: pypi
+  url: https://pypi.org/project/payplug/
+  language: Python
+  official: true
+  version: 1.4.0
+  published: '2021-03-03'
+  evidence: metadata names payplug.com
+- name: payplug-php
+  registry: github
+  url: https://github.com/payplug/payplug-php
+  language: PHP
+  official: true
+  version: null
+  published: '2026-07-06'
+  source_repo: https://github.com/payplug/payplug-php
+  evidence: repository in github.com/payplug, whose profile names the provider's domain
+- name: payplug-python
+  registry: github
+  url: https://github.com/payplug/payplug-python
+  language: Python
+  official: true
+  version: null
+  published: '2023-02-17'
+  source_repo: https://github.com/payplug/payplug-python
+  evidence: repository in github.com/payplug, whose profile names the provider's domain
+- name: payplug
+  registry: nuget
+  url: https://www.nuget.org/packages/payplug
+  language: C#
+  official: false
+  version: 1.1.0
+  published: null
+  evidence: 'name match only: the metadata names neither the provider''s domain nor its GitHub org'

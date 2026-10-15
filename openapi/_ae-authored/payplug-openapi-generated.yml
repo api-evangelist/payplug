@@ -1,0 +1,669 @@
+openapi: 3.1.0
+info:
+  title: PayPlug API
+  version: '2026-10-14'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-14: 11 operation(s) read from 2 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; PayPlug has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 10
+    documentation: 1
+    pages-with-code: 2
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-14'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.payplug.com/api/apiref.html
+  - https://docs.payplug.com/api/apiref.html?php
+servers:
+- url: https://api.payplug.com
+paths:
+  /:
+    get:
+      operationId: get
+      tags:
+      - Api
+      summary: GET /
+      x-source: https://docs.payplug.com/api/apiref.html
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl \n Printable documentation \n PayPlug Features \n Overview \n Based on simple REST concepts, the PayPlug API returns JSON\
+          \ objects for your payments, refunds, installment plans, etc. \n All API URLs listed in this documentation are relative to https://api.payplug.com\
+          \ . For example, the create payment API call is reachable at https://api.payplug.com/v1/payments . \nAll the features with the or label "
+  /v1/cards/card_kFVrvXm2kYlZVmgk2sk1m9:
+    delete:
+      operationId: delete_v1_cards_card_kFVrvXm2kYlZVmgk2sk1m9
+      tags:
+      - Cards
+      summary: DELETE /v1/cards/card_kFVrvXm2kYlZVmgk2sk1m9
+      x-source: https://docs.payplug.com/api/apiref.html
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X DELETE https://api.payplug.com/v1/cards/card_kFVrvXm2kYlZVmgk2sk1m9  -H \"Authorization: Bearer REDACTED_STRIPE_KEY\"\
+          \  -H \"Content-Type: application/json\"  -H \"PayPlug-Version: 2019-08-06\" \n <?php \n \\Payplug\\Card :: delete ( 'card_kFVrvXm2kYlZVmgk2sk1m9'\
+          \ ); \n You can delete a card which was associated to a payment. \n URL arguments: \n Key \n Description \n card_id \n Token of the\
+          \ payment c"
+  /v1/installment_plans/{installmentPlanId}:
+    get:
+      operationId: get_v1_installment_plans_installmentPlanId
+      tags:
+      - Installment Plans
+      summary: Retrieve an installment plan
+      description: Retrieve an installment plan
+      x-source: https://docs.payplug.com/api/apiref.html?php
+      parameters:
+      - name: installmentPlanId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1InstallmentPlansInstallmentplanidResponse'
+      x-evidence:
+        kind: documentation
+    patch:
+      operationId: patch_v1_installment_plans_installmentPlanId
+      tags:
+      - Installment Plans
+      summary: Update an installment plan
+      description: Update an installment plan
+      x-source: https://docs.payplug.com/api/apiref.html?php
+      parameters:
+      - name: installmentPlanId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchV1InstallmentPlansInstallmentplanidRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchV1InstallmentPlansInstallmentplanidResponse'
+      x-evidence:
+        kind: documentation
+  /v1/payments:
+    get:
+      operationId: get_v1_payments
+      tags:
+      - Payments
+      summary: GET /v1/payments
+      x-source: https://docs.payplug.com/api/apiref.html
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X GET https://api.payplug.com/v1/payments  -H \"Authorization: Bearer REDACTED_STRIPE_KEY\"  -H \"PayPlug-Version:\
+          \ 2019-08-06\" \n <?php "
+  /v1/payments/{paymentId}:
+    get:
+      operationId: get_v1_payments_paymentId
+      tags:
+      - Payments
+      summary: Retrieve a payment
+      x-source: https://docs.payplug.com/api/apiref.html
+      parameters:
+      - name: paymentId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1PaymentsPaymentidResponse'
+      x-evidence:
+        kind: documentation
+    patch:
+      operationId: patch_v1_payments_paymentId
+      tags:
+      - Payments
+      summary: Update a payment
+      x-source: https://docs.payplug.com/api/apiref.html
+      parameters:
+      - name: paymentId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchV1PaymentsPaymentidRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchV1PaymentsPaymentidResponse'
+      x-evidence:
+        kind: documentation
+  /v1/payments/{paymentId}/refunds:
+    get:
+      operationId: get_v1_payments_paymentId_refunds
+      tags:
+      - Payments
+      summary: List refunds for a payment
+      description: List refunds for a payment
+      x-source: https://docs.payplug.com/api/apiref.html?php
+      parameters:
+      - name: paymentId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Number of objects per page.
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Page number.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1PaymentsPaymentidRefundsResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_v1_payments_paymentId_refunds
+      tags:
+      - Payments
+      summary: Create a refund
+      description: Create a refund
+      x-source: https://docs.payplug.com/api/apiref.html?php
+      parameters:
+      - name: paymentId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1PaymentsPaymentidRefundsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1PaymentsPaymentidRefundsResponse'
+      x-evidence:
+        kind: documentation
+  /v1/payments/{paymentId}/refunds/{refundId}:
+    get:
+      operationId: get_v1_payments_paymentId_refunds_refundId
+      tags:
+      - Payments
+      summary: Retrieve a refund
+      description: Retrieve a refund
+      x-source: https://docs.payplug.com/api/apiref.html?php
+      parameters:
+      - name: paymentId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: refundId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1PaymentsPaymentidRefundsRefundidResponse'
+      x-evidence:
+        kind: documentation
+  /v1/{v1id}:
+    post:
+      operationId: post_v1_v1id
+      tags:
+      - Api
+      summary: Create an installment plan
+      description: Create an installment plan
+      x-source: https://docs.payplug.com/api/apiref.html?php
+      parameters:
+      - name: v1id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1V1IdRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1V1IdResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at v1Id
+components:
+  schemas:
+    GetV1InstallmentPlansInstallmentplanidResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Installment plan ID.
+        object:
+          type: string
+          description: 'Value is: installment_plan.'
+        status:
+          type: string
+          description: Current status.
+    PatchV1InstallmentPlansInstallmentplanidRequest:
+      type: object
+      properties:
+        metadata:
+          type: object
+          description: Metadata to update.
+    PatchV1InstallmentPlansInstallmentplanidResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Installment plan ID.
+        metadata:
+          type: object
+          description: Updated metadata.
+    GetV1PaymentsPaymentidResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+        is_live:
+          type: boolean
+        amount:
+          type: integer
+        currency:
+          type: string
+        billing:
+          type: object
+        shipping:
+          type: object
+        hosted_payment:
+          type: object
+        metadata:
+          type: object
+    PatchV1PaymentsPaymentidRequest:
+      type: object
+      properties:
+        metadata:
+          type: object
+          description: Custom metadata to update.
+    PatchV1PaymentsPaymentidResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+        metadata:
+          type: object
+    GetV1PaymentsPaymentidRefundsResponse:
+      type: object
+      properties:
+        object:
+          type: string
+          description: 'Value is: list.'
+        data:
+          type: array
+          description: Array of refund objects.
+    PostV1PaymentsPaymentidRefundsRequest:
+      type: object
+      properties:
+        amount:
+          type: string
+          description: Refund amount in cents.
+        metadata:
+          type: object
+          description: Custom metadata.
+      required:
+      - amount
+    PostV1PaymentsPaymentidRefundsResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Refund ID.
+        object:
+          type: string
+          description: 'Value is: refund.'
+        amount:
+          type: string
+          description: Refund amount.
+    GetV1PaymentsPaymentidRefundsRefundidResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Refund ID.
+        object:
+          type: string
+          description: 'Value is: refund.'
+        amount:
+          type: string
+          description: Refund amount.
+    PostV1V1IdRequest:
+      type: object
+      properties:
+        amount:
+          type: integer
+        currency:
+          type: string
+        billing:
+          type: object
+          properties:
+            title:
+              type: string
+            first_name:
+              type: string
+            last_name:
+              type: string
+            mobile_phone_number:
+              type: string
+            email:
+              type: string
+            address1:
+              type: string
+            postcode:
+              type: string
+            city:
+              type: string
+            country:
+              type: string
+            language:
+              type: string
+        shipping:
+          type: object
+          properties:
+            title:
+              type: string
+            first_name:
+              type: string
+            last_name:
+              type: string
+            email:
+              type: string
+            address1:
+              type: string
+            postcode:
+              type: string
+            city:
+              type: string
+            country:
+              type: string
+            language:
+              type: string
+            delivery_type:
+              type: string
+        hosted_payment:
+          type: object
+          properties:
+            return_url:
+              type: string
+            cancel_url:
+              type: string
+        notification_url:
+          type: string
+        metadata:
+          type: object
+          properties:
+            customer_id:
+              type: string
+        save_card:
+          type: boolean
+        force_3ds:
+          type: boolean
+    PostV1V1IdResponse:
+      type: object
+      properties:
+        amount:
+          type: integer
+        amount_refunded:
+          type: integer
+        authorization:
+          type:
+          - string
+          - 'null'
+        card:
+          type: object
+          properties:
+            brand:
+              type:
+              - string
+              - 'null'
+            country:
+              type:
+              - string
+              - 'null'
+            exp_month:
+              type:
+              - string
+              - 'null'
+            exp_year:
+              type:
+              - string
+              - 'null'
+            id:
+              type:
+              - string
+              - 'null'
+            last4:
+              type:
+              - string
+              - 'null'
+        created_at:
+          type: integer
+        refundable_after:
+          type: integer
+        refundable_until:
+          type: integer
+        currency:
+          type: string
+        billing:
+          type: object
+          properties:
+            title:
+              type: string
+            first_name:
+              type: string
+            last_name:
+              type: string
+            mobile_phone_number:
+              type:
+              - string
+              - 'null'
+            email:
+              type: string
+            landline_phone_number:
+              type:
+              - string
+              - 'null'
+            address1:
+              type: string
+            address2:
+              type:
+              - string
+              - 'null'
+            postcode:
+              type: string
+            city:
+              type: string
+            state:
+              type:
+              - string
+              - 'null'
+            country:
+              type: string
+            language:
+              type: string
+        shipping:
+          type: object
+          properties:
+            title:
+              type: string
+            first_name:
+              type: string
+            last_name:
+              type: string
+            email:
+              type: string
+            mobile_phone_number:
+              type:
+              - string
+              - 'null'
+            landline_phone_number:
+              type:
+              - string
+              - 'null'
+            address1:
+              type: string
+            address2:
+              type:
+              - string
+              - 'null'
+            postcode:
+              type: string
+            city:
+              type: string
+            state:
+              type:
+              - string
+              - 'null'
+            country:
+              type: string
+            language:
+              type: string
+            delivery_type:
+              type: string
+        failure:
+          type:
+          - string
+          - 'null'
+        hosted_payment:
+          type: object
+          properties:
+            cancel_url:
+              type: string
+            paid_at:
+              type:
+              - string
+              - 'null'
+            payment_url:
+              type: string
+            return_url:
+              type: string
+            sent_by:
+              type:
+              - string
+              - 'null'
+        id:
+          type: string
+        is_3ds:
+          type:
+          - string
+          - 'null'
+        is_live:
+          type: boolean
+        is_paid:
+          type: boolean
+        paid_at:
+          type:
+          - string
+          - 'null'
+        is_refunded:
+          type: boolean
+        installment_plan_id:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        metadata:
+          type: object
+          properties:
+            customer_id:
+              type: string
+        notification:
+          type: object
+          properties:
+            response_code:
+              type:
+              - string
+              - 'null'
+            url:
+              type: string
+        object:
+          type: string
+        save_card:
+          type: boolean
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+- bearer: []
+tags:
+- name: Api
+- name: Cards
+- name: Installment Plans
+- name: Payments

@@ -1,0 +1,15 @@
+generated: '2026-10-14'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.payplug.com/api/changelog.html
+sources:
+- https://docs.payplug.com/api/changelog.html
+- https://docs.payplug.com:443/api/changelog.html
+- https://docs.payplug.com/api/index.html
+- https://docs.payplug.com:443/api/index.html
+versioning:
+  how_selected: PayPlug-Version HTTP header
+  docs: The PayPlug API now supports the PayPlug-Version HTTP header to chose what version of the API to use.
+deprecation: {}
+status_page: null
+docs: https://docs.payplug.com/api/changelog.html

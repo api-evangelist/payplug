@@ -1,0 +1,134 @@
+{
+  "@context": {
+    "@vocab": "https://payplug.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "payplug": "https://payplug.com/schema#",
+    "GetV1InstallmentPlansInstallmentplanidResponse": "payplug:GetV1InstallmentPlansInstallmentplanidResponse",
+    "id": {
+      "@id": "payplug:id",
+      "@type": "xsd:string"
+    },
+    "object": {
+      "@id": "payplug:object",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "payplug:status",
+      "@type": "xsd:string"
+    },
+    "PatchV1InstallmentPlansInstallmentplanidRequest": "payplug:PatchV1InstallmentPlansInstallmentplanidRequest",
+    "metadata": {
+      "@id": "payplug:metadata"
+    },
+    "PatchV1InstallmentPlansInstallmentplanidResponse": "payplug:PatchV1InstallmentPlansInstallmentplanidResponse",
+    "GetV1PaymentsPaymentidResponse": "payplug:GetV1PaymentsPaymentidResponse",
+    "is_live": {
+      "@id": "payplug:is_live",
+      "@type": "xsd:boolean"
+    },
+    "amount": {
+      "@id": "payplug:amount",
+      "@type": "xsd:integer"
+    },
+    "currency": {
+      "@id": "payplug:currency",
+      "@type": "xsd:string"
+    },
+    "billing": {
+      "@id": "payplug:billing"
+    },
+    "shipping": {
+      "@id": "payplug:shipping"
+    },
+    "hosted_payment": {
+      "@id": "payplug:hosted_payment"
+    },
+    "PatchV1PaymentsPaymentidRequest": "payplug:PatchV1PaymentsPaymentidRequest",
+    "PatchV1PaymentsPaymentidResponse": "payplug:PatchV1PaymentsPaymentidResponse",
+    "GetV1PaymentsPaymentidRefundsResponse": "payplug:GetV1PaymentsPaymentidRefundsResponse",
+    "data": {
+      "@id": "payplug:data",
+      "@container": "@list"
+    },
+    "PostV1PaymentsPaymentidRefundsRequest": "payplug:PostV1PaymentsPaymentidRefundsRequest",
+    "PostV1PaymentsPaymentidRefundsResponse": "payplug:PostV1PaymentsPaymentidRefundsResponse",
+    "GetV1PaymentsPaymentidRefundsRefundidResponse": "payplug:GetV1PaymentsPaymentidRefundsRefundidResponse",
+    "PostV1V1IdRequest": "payplug:PostV1V1IdRequest",
+    "notification_url": {
+      "@id": "payplug:notification_url",
+      "@type": "xsd:string"
+    },
+    "save_card": {
+      "@id": "payplug:save_card",
+      "@type": "xsd:boolean"
+    },
+    "force_3ds": {
+      "@id": "payplug:force_3ds",
+      "@type": "xsd:boolean"
+    },
+    "PostV1V1IdResponse": "payplug:PostV1V1IdResponse",
+    "amount_refunded": {
+      "@id": "payplug:amount_refunded",
+      "@type": "xsd:integer"
+    },
+    "authorization": {
+      "@id": "payplug:authorization",
+      "@type": "xsd:string"
+    },
+    "card": {
+      "@id": "payplug:card"
+    },
+    "created_at": {
+      "@id": "payplug:created_at",
+      "@type": "xsd:integer"
+    },
+    "refundable_after": {
+      "@id": "payplug:refundable_after",
+      "@type": "xsd:integer"
+    },
+    "refundable_until": {
+      "@id": "payplug:refundable_until",
+      "@type": "xsd:integer"
+    },
+    "failure": {
+      "@id": "payplug:failure",
+      "@type": "xsd:string"
+    },
+    "is_3ds": {
+      "@id": "payplug:is_3ds",
+      "@type": "xsd:string"
+    },
+    "is_paid": {
+      "@id": "payplug:is_paid",
+      "@type": "xsd:boolean"
+    },
+    "paid_at": {
+      "@id": "payplug:paid_at",
+      "@type": "xsd:string"
+    },
+    "is_refunded": {
+      "@id": "payplug:is_refunded",
+      "@type": "xsd:boolean"
+    },
+    "installment_plan_id": {
+      "@id": "payplug:installment_plan_id",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "payplug:description",
+      "@type": "xsd:string"
+    },
+    "notification": {
+      "@id": "payplug:notification"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "PayPlug API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects PayPlug's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-14) from openapi/_ae-authored/payplug-openapi-generated.yml.",
+  "dcterms:created": "2026-10-14",
+  "dcterms:source": [
+    "openapi/_ae-authored/payplug-openapi-generated.yml"
+  ]
+}

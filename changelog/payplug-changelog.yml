@@ -1,0 +1,59 @@
+generated: '2026-10-14'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.payplug.com/api/changelog.html
+sources:
+- https://docs.payplug.com/api/changelog.html
+- https://docs.payplug.com:443/api/changelog.html
+entries:
+- breaking: false
+  highlights:
+  - Added Scalapay and Wero in Payment Methods supported.
+  date: '2026-03-09'
+- breaking: false
+  highlights:
+  - Removed Sofort, Giropay and added Scalapay in Payment Methods supported.
+  date: '2026-02-23'
+- breaking: false
+  highlights:
+  - Update of a link to a tutorial about how to create a recurring payment recurring payment page.
+  date: '2025-10-29'
+- breaking: false
+  highlights:
+  - Expiration of the payment link on the create a payment page.
+  date: '2025-03-25'
+- breaking: false
+  highlights:
+  - Updated the CDN version on the Integrated payments full example page.
+  date: '2024-08-21'
+- breaking: false
+  highlights:
+  - Added HTTP status code 409 to the list of the possible ones on the overview page.
+  date: '2024-02-15'
+- breaking: false
+  highlights:
+  - Added Sofort and MyBank in Payment Methods supported.
+  date: '2023-04-24'
+- breaking: false
+  highlights:
+  - Added Payment Methods payments.
+  date: '2023-03-24'
+- breaking: false
+  highlights:
+  - Added American Express payments.
+  date: '2022-11-07'
+- breaking: false
+  highlights:
+  - Added Bancontact payments.
+  date: '2022-03-15'
+- breaking: false
+  highlights:
+  - When creating a payment, shipping and billing are no-longer required, but highly recommended to increase your chances of frictionless payments.
+    Note that they are still required for Oney payments.
+  date: '2020-12-10'
+- breaking: false
+  highlights:
+  - 'Added new attributes to payment resource: refundable_after and refundable_until . See documentation for more details.'
+  date: '2020-07-31'
+note: The changelog does not list explicit API version numbers; entries are dated and no major version is shown.
+docs: https://docs.payplug.com/api/changelog.html
