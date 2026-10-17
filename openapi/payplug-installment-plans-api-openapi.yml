@@ -1,0 +1,108 @@
+openapi: 3.2.0
+info:
+  title: PayPlug Installment Plans API
+  version: '2026-10-14'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-14: 11 operation(s) read from 2 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; PayPlug has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 10
+    documentation: 1
+    pages-with-code: 2
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-14'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.payplug.com/api/apiref.html
+  - https://docs.payplug.com/api/apiref.html?php
+servers:
+- url: https://api.payplug.com
+security:
+- bearer: []
+tags:
+- name: Installment Plans
+paths:
+  /v1/installment_plans/{installmentPlanId}:
+    get:
+      operationId: get_v1_installment_plans_installmentPlanId
+      tags:
+      - Installment Plans
+      summary: Retrieve an installment plan
+      x-source: https://docs.payplug.com/api/apiref.html?php
+      parameters:
+      - name: installmentPlanId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1InstallmentPlansInstallmentplanidResponse'
+      x-evidence:
+        kind: documentation
+    patch:
+      operationId: patch_v1_installment_plans_installmentPlanId
+      tags:
+      - Installment Plans
+      summary: Update an installment plan
+      x-source: https://docs.payplug.com/api/apiref.html?php
+      parameters:
+      - name: installmentPlanId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchV1InstallmentPlansInstallmentplanidRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchV1InstallmentPlansInstallmentplanidResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PatchV1InstallmentPlansInstallmentplanidRequest:
+      type: object
+      properties:
+        metadata:
+          type: object
+          description: Metadata to update.
+    GetV1InstallmentPlansInstallmentplanidResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Installment plan ID.
+        object:
+          type: string
+          description: 'Value is: installment_plan.'
+        status:
+          type: string
+          description: Current status.
+    PatchV1InstallmentPlansInstallmentplanidResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Installment plan ID.
+        metadata:
+          type: object
+          description: Updated metadata.
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer

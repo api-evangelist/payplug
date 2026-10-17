@@ -1,0 +1,263 @@
+openapi: 3.2.0
+info:
+  title: PayPlug Payments API
+  version: '2026-10-14'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-14: 11 operation(s) read from 2 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; PayPlug has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 10
+    documentation: 1
+    pages-with-code: 2
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-14'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.payplug.com/api/apiref.html
+  - https://docs.payplug.com/api/apiref.html?php
+servers:
+- url: https://api.payplug.com
+security:
+- bearer: []
+tags:
+- name: Payments
+paths:
+  /v1/payments:
+    get:
+      operationId: get_v1_payments
+      tags:
+      - Payments
+      summary: GET /v1/payments
+      x-source: https://docs.payplug.com/api/apiref.html
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X GET https://api.payplug.com/v1/payments  -H \"Authorization: Bearer REDACTED_STRIPE_KEY\"  -H \"PayPlug-Version: 2019-08-06\" \n <?php "
+  /v1/payments/{paymentId}:
+    get:
+      operationId: get_v1_payments_paymentId
+      tags:
+      - Payments
+      summary: Retrieve a payment
+      x-source: https://docs.payplug.com/api/apiref.html
+      parameters:
+      - name: paymentId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1PaymentsPaymentidResponse'
+      x-evidence:
+        kind: documentation
+    patch:
+      operationId: patch_v1_payments_paymentId
+      tags:
+      - Payments
+      summary: Update a payment
+      x-source: https://docs.payplug.com/api/apiref.html
+      parameters:
+      - name: paymentId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchV1PaymentsPaymentidRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchV1PaymentsPaymentidResponse'
+      x-evidence:
+        kind: documentation
+  /v1/payments/{paymentId}/refunds:
+    get:
+      operationId: get_v1_payments_paymentId_refunds
+      tags:
+      - Payments
+      summary: List refunds for a payment
+      x-source: https://docs.payplug.com/api/apiref.html?php
+      parameters:
+      - name: paymentId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Number of objects per page.
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Page number.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1PaymentsPaymentidRefundsResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_v1_payments_paymentId_refunds
+      tags:
+      - Payments
+      summary: Create a refund
+      x-source: https://docs.payplug.com/api/apiref.html?php
+      parameters:
+      - name: paymentId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1PaymentsPaymentidRefundsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1PaymentsPaymentidRefundsResponse'
+      x-evidence:
+        kind: documentation
+  /v1/payments/{paymentId}/refunds/{refundId}:
+    get:
+      operationId: get_v1_payments_paymentId_refunds_refundId
+      tags:
+      - Payments
+      summary: Retrieve a refund
+      x-source: https://docs.payplug.com/api/apiref.html?php
+      parameters:
+      - name: paymentId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: refundId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1PaymentsPaymentidRefundsRefundidResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PatchV1PaymentsPaymentidResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+        metadata:
+          type: object
+    PatchV1PaymentsPaymentidRequest:
+      type: object
+      properties:
+        metadata:
+          type: object
+          description: Custom metadata to update.
+    GetV1PaymentsPaymentidRefundsResponse:
+      type: object
+      properties:
+        object:
+          type: string
+          description: 'Value is: list.'
+        data:
+          type: array
+          description: Array of refund objects.
+    GetV1PaymentsPaymentidRefundsRefundidResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Refund ID.
+        object:
+          type: string
+          description: 'Value is: refund.'
+        amount:
+          type: string
+          description: Refund amount.
+    PostV1PaymentsPaymentidRefundsRequest:
+      type: object
+      properties:
+        amount:
+          type: string
+          description: Refund amount in cents.
+        metadata:
+          type: object
+          description: Custom metadata.
+      required:
+      - amount
+    PostV1PaymentsPaymentidRefundsResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Refund ID.
+        object:
+          type: string
+          description: 'Value is: refund.'
+        amount:
+          type: string
+          description: Refund amount.
+    GetV1PaymentsPaymentidResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+        is_live:
+          type: boolean
+        amount:
+          type: integer
+        currency:
+          type: string
+        billing:
+          type: object
+        shipping:
+          type: object
+        hosted_payment:
+          type: object
+        metadata:
+          type: object
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer

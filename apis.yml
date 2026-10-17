@@ -86,16 +86,16 @@ common:
   url: https://www.payplug.com
 
 apis:
-- aid: payplug:payplug-api
-  name: PayPlug API
-  description: 'PayPlug API as documented publicly: 11 operations. Contract generated from the documentation by API Evangelist (2026-10-14); not
-    the provider''s own document.'
+- aid: payplug:payplug-cards-api
+  name: PayPlug Cards API
+  description: The Cards API from PayPlug — 1 operation(s) for cards.
   humanURL: https://docs.payplug.com/api/apiref.html
   baseURL: https://api.payplug.com
+  tags:
+  - Cards
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/payplug-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/payplug-cards-api-openapi.yml
   - type: JSONSchema
     url: json-schema/payplug-post-v1-v1-id-response-schema.json
   - type: JSONSchema
@@ -108,7 +108,72 @@ apis:
     url: json-schema/payplug-get-v1-payments-paymentid-refunds-refundid-response-schema.json
   - type: JSONSchema
     url: json-schema/payplug-post-v1-payments-paymentid-refunds-response-schema.json
-
+- aid: payplug:payplug-installment-plans-api
+  name: PayPlug Installment Plans API
+  description: The Installment Plans API from PayPlug — 1 operation(s) for installment plans.
+  humanURL: https://docs.payplug.com/api/apiref.html
+  baseURL: https://api.payplug.com
+  tags:
+  - Installment Plans
+  properties:
+  - type: OpenAPI
+    url: openapi/payplug-installment-plans-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/payplug-post-v1-v1-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-post-v1-v1-id-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-get-v1-payments-paymentid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-get-v1-installment-plans-installmentplanid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-get-v1-payments-paymentid-refunds-refundid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-post-v1-payments-paymentid-refunds-response-schema.json
+- aid: payplug:payplug-payments-api
+  name: PayPlug Payments API
+  description: The Payments API from PayPlug — 4 operation(s) for payments.
+  humanURL: https://docs.payplug.com/api/apiref.html
+  baseURL: https://api.payplug.com
+  tags:
+  - Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/payplug-payments-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/payplug-post-v1-v1-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-post-v1-v1-id-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-get-v1-payments-paymentid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-get-v1-installment-plans-installmentplanid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-get-v1-payments-paymentid-refunds-refundid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-post-v1-payments-paymentid-refunds-response-schema.json
+- aid: payplug:payplug-payplug-api-api
+  name: PayPlug PayPlug API
+  description: The PayPlug API API from PayPlug — 2 operation(s) for payplug api.
+  humanURL: https://docs.payplug.com/api/apiref.html
+  baseURL: https://api.payplug.com
+  tags:
+  - PayPlug API
+  properties:
+  - type: OpenAPI
+    url: openapi/payplug-payplug-api-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/payplug-post-v1-v1-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-post-v1-v1-id-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-get-v1-payments-paymentid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-get-v1-installment-plans-installmentplanid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-get-v1-payments-paymentid-refunds-refundid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/payplug-post-v1-payments-paymentid-refunds-response-schema.json
 x-coverage:
   state: unreadable
   reason: no-machine-readable-spec

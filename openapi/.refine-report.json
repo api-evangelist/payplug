@@ -1,0 +1,24 @@
+{
+  "provider": "payplug",
+  "sources": [
+    "_ae-authored/payplug-openapi-generated.yml"
+  ],
+  "outputs": [
+    "payplug-cards-api-openapi.yml",
+    "payplug-installment-plans-api-openapi.yml",
+    "payplug-payplug-api-api-openapi.yml",
+    "payplug-payments-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "payplug-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "payplug-openapi-generated.yml: tagged paths GET / -> PayPlug API",
+    "payplug-openapi-generated.yml: tagged paths POST /v1/{v1id} -> PayPlug API",
+    "payplug-openapi-generated.yml: declared missing tag: PayPlug API",
+    "apis.yml register: written (+4 apis, 4 total)"
+  ],
+  "skipped": []
+}

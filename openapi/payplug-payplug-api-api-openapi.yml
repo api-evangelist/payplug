@@ -1,0 +1,331 @@
+openapi: 3.2.0
+info:
+  title: PayPlug API
+  version: '2026-10-14'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-14: 11 operation(s) read from 2 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; PayPlug has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 10
+    documentation: 1
+    pages-with-code: 2
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-14'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.payplug.com/api/apiref.html
+  - https://docs.payplug.com/api/apiref.html?php
+servers:
+- url: https://api.payplug.com
+security:
+- bearer: []
+tags:
+- name: PayPlug API
+paths:
+  /:
+    get:
+      operationId: get
+      tags:
+      - PayPlug API
+      summary: GET /
+      x-source: https://docs.payplug.com/api/apiref.html
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl \n Printable documentation \n PayPlug Features \n Overview \n Based on simple REST concepts, the PayPlug API returns JSON objects for your payments, refunds, installment plans, etc. \n All API URLs listed in this documentation are relative to https://api.payplug.com . For example, the create payment API call is reachable at https://api.payplug.com/v1/payments . \nAll the features with the or label "
+  /v1/{v1id}:
+    post:
+      operationId: post_v1_v1id
+      tags:
+      - PayPlug API
+      summary: Create an installment plan
+      x-source: https://docs.payplug.com/api/apiref.html?php
+      parameters:
+      - name: v1id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1V1IdRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1V1IdResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at v1Id
+components:
+  schemas:
+    PostV1V1IdRequest:
+      type: object
+      properties:
+        amount:
+          type: integer
+        currency:
+          type: string
+        billing:
+          type: object
+          properties:
+            title:
+              type: string
+            first_name:
+              type: string
+            last_name:
+              type: string
+            mobile_phone_number:
+              type: string
+            email:
+              type: string
+            address1:
+              type: string
+            postcode:
+              type: string
+            city:
+              type: string
+            country:
+              type: string
+            language:
+              type: string
+        shipping:
+          type: object
+          properties:
+            title:
+              type: string
+            first_name:
+              type: string
+            last_name:
+              type: string
+            email:
+              type: string
+            address1:
+              type: string
+            postcode:
+              type: string
+            city:
+              type: string
+            country:
+              type: string
+            language:
+              type: string
+            delivery_type:
+              type: string
+        hosted_payment:
+          type: object
+          properties:
+            return_url:
+              type: string
+            cancel_url:
+              type: string
+        notification_url:
+          type: string
+        metadata:
+          type: object
+          properties:
+            customer_id:
+              type: string
+        save_card:
+          type: boolean
+        force_3ds:
+          type: boolean
+    PostV1V1IdResponse:
+      type: object
+      properties:
+        amount:
+          type: integer
+        amount_refunded:
+          type: integer
+        authorization:
+          type:
+          - string
+          - 'null'
+        card:
+          type: object
+          properties:
+            brand:
+              type:
+              - string
+              - 'null'
+            country:
+              type:
+              - string
+              - 'null'
+            exp_month:
+              type:
+              - string
+              - 'null'
+            exp_year:
+              type:
+              - string
+              - 'null'
+            id:
+              type:
+              - string
+              - 'null'
+            last4:
+              type:
+              - string
+              - 'null'
+        created_at:
+          type: integer
+        refundable_after:
+          type: integer
+        refundable_until:
+          type: integer
+        currency:
+          type: string
+        billing:
+          type: object
+          properties:
+            title:
+              type: string
+            first_name:
+              type: string
+            last_name:
+              type: string
+            mobile_phone_number:
+              type:
+              - string
+              - 'null'
+            email:
+              type: string
+            landline_phone_number:
+              type:
+              - string
+              - 'null'
+            address1:
+              type: string
+            address2:
+              type:
+              - string
+              - 'null'
+            postcode:
+              type: string
+            city:
+              type: string
+            state:
+              type:
+              - string
+              - 'null'
+            country:
+              type: string
+            language:
+              type: string
+        shipping:
+          type: object
+          properties:
+            title:
+              type: string
+            first_name:
+              type: string
+            last_name:
+              type: string
+            email:
+              type: string
+            mobile_phone_number:
+              type:
+              - string
+              - 'null'
+            landline_phone_number:
+              type:
+              - string
+              - 'null'
+            address1:
+              type: string
+            address2:
+              type:
+              - string
+              - 'null'
+            postcode:
+              type: string
+            city:
+              type: string
+            state:
+              type:
+              - string
+              - 'null'
+            country:
+              type: string
+            language:
+              type: string
+            delivery_type:
+              type: string
+        failure:
+          type:
+          - string
+          - 'null'
+        hosted_payment:
+          type: object
+          properties:
+            cancel_url:
+              type: string
+            paid_at:
+              type:
+              - string
+              - 'null'
+            payment_url:
+              type: string
+            return_url:
+              type: string
+            sent_by:
+              type:
+              - string
+              - 'null'
+        id:
+          type: string
+        is_3ds:
+          type:
+          - string
+          - 'null'
+        is_live:
+          type: boolean
+        is_paid:
+          type: boolean
+        paid_at:
+          type:
+          - string
+          - 'null'
+        is_refunded:
+          type: boolean
+        installment_plan_id:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        metadata:
+          type: object
+          properties:
+            customer_id:
+              type: string
+        notification:
+          type: object
+          properties:
+            response_code:
+              type:
+              - string
+              - 'null'
+            url:
+              type: string
+        object:
+          type: string
+        save_card:
+          type: boolean
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer

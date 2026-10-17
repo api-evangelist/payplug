@@ -1,0 +1,45 @@
+openapi: 3.2.0
+info:
+  title: PayPlug Cards API
+  version: '2026-10-14'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-14: 11 operation(s) read from 2 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; PayPlug has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 10
+    documentation: 1
+    pages-with-code: 2
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-14'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.payplug.com/api/apiref.html
+  - https://docs.payplug.com/api/apiref.html?php
+servers:
+- url: https://api.payplug.com
+security:
+- bearer: []
+tags:
+- name: Cards
+paths:
+  /v1/cards/card_kFVrvXm2kYlZVmgk2sk1m9:
+    delete:
+      operationId: delete_v1_cards_card_kFVrvXm2kYlZVmgk2sk1m9
+      tags:
+      - Cards
+      summary: DELETE /v1/cards/card_kFVrvXm2kYlZVmgk2sk1m9
+      x-source: https://docs.payplug.com/api/apiref.html
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X DELETE https://api.payplug.com/v1/cards/card_kFVrvXm2kYlZVmgk2sk1m9  -H \"Authorization: Bearer REDACTED_STRIPE_KEY\"  -H \"Content-Type: application/json\"  -H \"PayPlug-Version: 2019-08-06\" \n <?php \n \\Payplug\\Card :: delete ( 'card_kFVrvXm2kYlZVmgk2sk1m9' ); \n You can delete a card which was associated to a payment. \n URL arguments: \n Key \n Description \n card_id \n Token of the payment c"
+components:
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
